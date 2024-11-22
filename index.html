@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabey Secure Holiday Security Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #15202b, #1c2838);
+            color: #ffffff;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(to right, #1da1f2, #0d8de6);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 20;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            margin-bottom: 10px;
+        }
+        header h1 {
+            font-size: 4em;
+            font-weight: bold;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            color: white;
+            padding: 10px;
+        }
+        nav {
+            background-color: #192734;
+            padding: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 30;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: #1da1f2;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.4em;
+            padding: 12px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #1a8cd8;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background: radial-gradient(circle, #22303c, #192734);
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        .tweet-card {
+            background: #2b3a47;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 50px;
+            color: #ffffff;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.25s linear, box-shadow 0.25s linear;
+        }
+        .tweet-card:hover {
+            z-index: 0;
+            pointer-events: none;
+        }
+        .tweet-card h2 {
+            font-size: 2.5em;
+            color: #1da1f2;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 8px #000000;
+        }
+        .tweet-card p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        a {
+            color: #1da1f2;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #66c0f4;
+            text-decoration: underline;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #1da1f2;
+            color: #ffffff;
+            padding: 20px 45px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.3em;
+            transition: background 0.3s ease, transform 0.3s ease;
+            margin: 30px 0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        .cta-button:hover {
+            background-color: #0d8de6;
+            transform: translateY(-8px);
+        }
+        .resource-card {
+            background: #2b3a47;
+            border-radius: 20px;
+            padding: 35px;
+            margin: 30px 0;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.25s linear, box-shadow 0.25s linear;
+        }
+        .resource-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        }
+        .snowflakes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .snowflake {
+            position: absolute;
+            color: #ffffff;
+            font-size: 1.5em;
+            animation: fall 12s ease-in-out infinite;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0.5;
+            }
+        }
+        .santa-elf-art {
+            color: #66c0f4;
+            font-weight: bold;
+            font-size: 1.8em;
+            text-align: center;
+            margin: 30px 0;
+            text-shadow: 2px 2px 8px #000000;
+        }
+        .santa-elf-art-right {
+            color: #66c0f4;
+            font-weight: bold;
+            font-size: 1.8em;
+            text-align: center;
+            margin: 30px 0;
+            text-shadow: 2px 2px 8px #000000;
+        }
+        .accordion-button {
+            background: #1da1f2;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.3em;
+            border: none;
+            border-radius: 15px;
+            padding: 15px;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background 0.3s, box-shadow 0.3s;
+            z-index: 10;
+            position: relative;
+            pointer-events: auto;
+        }
+        .accordion-button:hover {
+            background: #0d8de6;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .accordion-content {
+            display: none;
+            background: #263544;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .accordion-content p, .accordion-content ul {
+            color: #ffffff;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const snowflakesContainer = document.querySelector('.snowflakes');
+            for (let i = 0; i < 50; i++) {
+                let snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.style.left = Math.random() * 100 + 'vw';
+                snowflake.style.animationDuration = 10 + Math.random() * 20 + 's';
+                snowflake.innerHTML = '❄';
+                snowflakesContainer.appendChild(snowflake);
+            }
+        });
+
+        function showPopup(event, content) {
+            event.preventDefault();
+            const popup = document.getElementById('popup');
+            const popupContent = document.getElementById('popup-content');
+            popupContent.innerHTML = content;
+            popup.style.display = 'block';
+        }
+        function closePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'none';
+        }
+    </script>
+</head>
+
+<body>
+    <div style="height: 100px;"></div>
+    <header>
+        <h1>Sabey Secure: Your Holiday Cybersecurity Hub</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#threats">Top Threats</a></li>
+            <li><a href="#trends">Cybersecurity Trends</a></li>
+            <li><a href="#tips">Safety Tips</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+    </nav>
+
+    <div class="santa-elf-art">
+        🎅 "Ho Ho Ho, Stay Safe Online!" 🧖
+    </div>
+
+    <div style="position: fixed; top: 50%; left: 0; right: 0; display: flex; justify-content: space-between; padding: 0 40px; transform: translateY(-50%); z-index: 5;">
+    <img src="https://i.imgur.com/hXqzkBc.jpg" alt="Holiday Cybersecurity Tips" style="max-width: 15%; height: auto;">
+    <img src="https://i.imgur.com/hXqzkBc.jpg" alt="Holiday Cybersecurity Tips" style="max-width: 15%; height: auto;">
+</div>
+<div id="threats" class="container tweet-card" style="position: relative;">
+
+        <blockquote class="imgur-embed-pub" lang="en" data-id="hXqzkBc"><a href="https://imgur.com/hXqzkBc">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+        <h2>Top Holiday Cybersecurity Threats to Watch For</h2>
+        <p>During the holidays, online activity spikes, making it a prime target for cybercriminals. Here are some of the top threats you need to be aware of:</p>
+        <div class="accordion">
+            <button class="accordion-button" onclick="showPopup(event, decodeURIComponent(`Holiday Social Engineering involves scammers impersonating trusted organizations or people to steal your information. Verify all requests thoroughly before sharing personal details.<br><br><strong style=\'color: #ffffff;'>Tips:</strong><ul style=\'color: white;'><li style=\'color: white;'>Verify the identity of the person or organization contacting you.</li><li style=\'color: white;'>Research charities before making donations.</li><li style=\'color: white;'>Do not share personal information over the phone or email without verification.</li><li style=\'color: white;'>Be cautious of high-pressure tactics that push you to act urgently.</li><li style=\'color: white;'>Use official websites and trusted resources.</li></ul>`))">Holiday Social Engineering</button>
+            <button class="accordion-button" onclick="showPopup(event, decodeURIComponent(`Fake Online Promotions are fraudulent websites or promotions offering large discounts to trick you into sharing financial information or downloading malware.<br><br><strong style=\'color: white;'>Tips:</strong><ul style=\'color: white;'><li style=\'color: white;'>Be skeptical of deals that seem too good to be true.</li><li style=\'color: white;'>Check for HTTPS in the website URL before making a purchase.</li><li style=\'color: white;'>Use well-known and trusted e-commerce platforms.</li><li style=\'color: white;'>Avoid clicking on promotional links from unknown sources.</li><li style=\'color: white;'>Use credit cards for online purchases as they often have better fraud protection.</li></ul>`))">Fake Online Promotions</button>
+            <button class="accordion-button" onclick="showPopup(event, decodeURIComponent(`Holiday-Themed Ransomware often spikes during the holiday season, leveraging reduced IT staffing. Avoid opening attachments or clicking links in unsolicited emails.<br><br><strong style=\'color: white;'>Tips:</strong><ul style=\'color: white;'><li style=\'color: white;'>Do not open attachments or click links in unexpected emails.</li><li style=\'color: white;'>Ensure your antivirus software is up to date.</li><li style=\'color: white;'>Back up important data regularly.</li><li style=\'color: white;'>Use email filtering tools to block suspicious content.</li><li style=\'color: white;'>Educate family members and colleagues about ransomware threats.</li></ul>`))">Holiday-Themed Ransomware</button>
+        </div>
+    </div>
+
+    <div class="santa-elf-art">
+        🧝‍♂️ "Don't forget to use strong passphrases!" 🧝‍♀️
+    </div>
+
+    <div id="trends" class="container tweet-card" style="position: relative;">
+        <h2>Holiday Season Cybersecurity Trends You Need to Know</h2>
+        <p>The holiday period presents unique cybersecurity challenges. Understanding the trends can help you mitigate risks effectively:</p>
+        <div class="accordion">
+            <button class="accordion-button" onclick="showPopup(event, decodeURIComponent(`Increased Social Engineering during the holidays exploits stress and urgency. Be mindful of unsolicited contact or requests for sensitive information.<br><br><strong style=\'color: white;'>Tips:</strong><ul style=\'color: white;'><li style=\'color: white;'>Be mindful of unsolicited contact or requests for sensitive information.</li><li style=\'color: white;'>Take a moment to verify the legitimacy of the sender.</li><li style=\'color: white;'>Educate your family and colleagues on social engineering tactics.</li></ul>`))">Increased Social Engineering</button>
+            <button class="accordion-button" onclick="showPopup(event, decodeURIComponent(`Targeted Attacks on E-commerce exploit the surge in online shopping during the holidays. Be wary of unknown or insecure payment gateways.<br><br><strong style=\'color: white;'>Tips:</strong><ul style=\'color: white;'><li style=\'color: white;'>Stick to well-known online retailers for your purchases.</li><li style=\'color: white;'>Use trusted and secure payment gateways.</li><li style=\'color: white;'>Be cautious of overly complicated checkout processes.</li></ul>`))">Targeted Attacks on E-commerce</button>
+            <button class="accordion-button" onclick="showPopup(event, decodeURIComponent(`Weak Password Exploitation happens when people reuse or create easy-to-guess passwords under stress. Use unique passphrases to keep accounts secure.<br><br><strong style=\'color: white;'>Tips:</strong><ul style=\'color: white;'><li style=\'color: white;'>Use strong passphrases instead of passwords.</li><li style=\'color: white;'>Include uppercase, lowercase, numbers, and special characters.</li><li style=\'color: white;'>Consider using a password manager to securely store your passphrases.</li></ul>`))">Weak Password Exploitation</button>
+        </div>
+    </div>
+
+    <div class="santa-elf-art">
+        🎅 "MFA makes the Grinch stay away from your accounts!" 🧖
+    </div>
+
+    <div id="tips" class="container tweet-card" style="position: relative;">
+        <h2>Proactive Cybersecurity Tips for the Holidays</h2>
+        <p>Follow these best practices to keep your personal and financial information secure during the busy holiday season:</p>
+        <div class="accordion">
+            <button class="accordion-button" onclick="showPopup(event, decodeURIComponent(`Verify Emails and Links carefully before interacting. Phishing emails often look legitimate but aim to steal your credentials.<br><br><strong style=\'color: white;'>Tips:</strong><ul style=\'color: white;'><li style=\'color: white;'>Inspect the sender\'s email address carefully.</li><li style=\'color: white;'>Hover over links to check their destination before clicking.</li><li style=\'color: white;'>Report suspicious emails to your email provider.</li></ul>`))">Verify Emails and Links</button>
+            <button class="accordion-button" onclick="showPopup(event, decodeURIComponent(`Multi-Factor Authentication (MFA) adds an extra layer of security, making it harder for attackers to access your accounts even if they have your password.<br><br><strong style=\'color: white;'>Tips:</strong><ul style=\'color: white;'><li style=\'color: white;'>Enable MFA on email, banking, and other critical accounts.</li><li style=\'color: white;'>Consider using an authenticator app for added security.</li></ul>`))">Use Multi-Factor Authentication (MFA)</button>
+            <button class="accordion-button" onclick="showPopup(event, decodeURIComponent(`Monitor Financial Accounts for suspicious activity regularly, especially during the holidays. Quick response can help mitigate damage from unauthorized charges.<br><br><strong style=\'color: white;'>Tips:</strong><ul style=\'color: white;'><li style=\'color: white;'>Sign up for transaction alerts from your bank.</li><li style=\'color: white;'>Report suspicious activity immediately.</li></ul>`))">Monitor Financial Accounts</button>
+            <button class="accordion-button" onclick="showPopup(event, decodeURIComponent(`Use Strong, Unique Passphrases to enhance your security. Passphrases are longer and more complex, making them harder to guess.<br><br><strong style=\'color: white;'>Tips:</strong><ul style=\'color: white;'><li style=\'color: white;'>Use a unique password for every account.</li><li style=\'color: white;'>Consider using long passphrases that are easy for you to remember but hard for others to guess.</li></ul>`))">Use Strong, Unique Passwords</button>
+        </div>
+    </div>
+
+    <div id="resources" class="container tweet-card" style="position: relative;">
+        <h2>Helpful Resources for Staying Safe Online</h2>
+        <p>Use these official resources to stay informed and enhance your cybersecurity awareness:</p>
+        <div class="resource-card">
+            <a href="https://www.consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams" target="_blank">FTC Guide on Recognizing Phishing Scams</a>
+            <p>Learn how to spot and avoid common phishing scams during the holidays.</p>
+        </div>
+        <div class="resource-card">
+            <a href="https://www.ncsc.gov.uk/collection/top-tips-for-staying-secure-online" target="_blank">NCSC - Top Tips for Staying Secure Online</a>
+            <p>Practical tips to protect yourself while navigating the digital world during the holiday season.</p>
+        </div>
+    </div>
+
+    <div class="snowflakes" aria-hidden="true">
+    </div>
+<div id="popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #263544; color: #ffffff; padding: 25px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); z-index: 100;">
+        <p id="popup-content"></p>
+        <button onclick="closePopup()" style="background: #1da1f2; color: white; border: none; padding: 15px 25px; border-radius: 10px; cursor: pointer; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);">Close</button>
+    </div>
+</body>
+
+</html>
